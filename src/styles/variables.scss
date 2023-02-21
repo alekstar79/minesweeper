@@ -1,0 +1,48 @@
+//noinspection CssUnknownTarget
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+// css variable
+:root {
+  --primary-color: #555;
+  --bg-color: #eee;
+  --shadow-light: #fff;
+  --shadow-dark: #bbb;
+  --btn-hover-mask: linear-gradient(45deg, #d2d2d2, #fff);
+  --popup-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] {
+  --primary-color: #fff;
+  --bg-color: #555;
+  --shadow-light: #777;
+  --shadow-dark: #222;
+  --btn-hover-mask: linear-gradient(45deg, #333, #777);
+  --popup-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+// sass variables
+$main-bdrs: 0.2rem;
+$shadow-outer: 3px 3px 6px var(--shadow-dark), -2px -2px 5px var(--shadow-light);
+$shadow-inner: inset 2px 2px 5px var(--shadow-dark),
+  inset -2px -2px 5px var(--shadow-light);
+
+// mixin
+@mixin flexCenter($dir: 'row') {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $dir == 'col' {
+    flex-direction: column;
+  }
+}
+
+@mixin expandTriggerArea {
+  border: 0.1rem solid transparent;
+}
+
+@mixin backdropFilterBlur($blur: 0) {
+  backdrop-filter: blur($blur);
+  @supports not (backdrop-filter: blur(0px)) {
+    background-color: var(--bg-color);
+  }
+}

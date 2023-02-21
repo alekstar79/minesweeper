@@ -1,0 +1,21 @@
+@import './reset.scss';
+
+html {
+  font-size: 80px;
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
+}
+
+// reset button style
+button {
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: initial;
+}
+
+ion-icon {
+  vertical-align: middle;
+  color: inherit;
+}
